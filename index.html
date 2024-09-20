@@ -67,7 +67,7 @@
 
         decimalInput.addEventListener('input', (e) => {
             const decimal = parseInt(e.target.value, 10);
-            if (isNaN(decimal) || decimal < 0 || decimal > 256) {
+            if (isNaN(decimal) || decimal < 0 || decimal > 511) {
                 updateBinaryDisplay(0);
             } else {
                 updateBinaryDisplay(decimal);

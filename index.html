@@ -18,7 +18,9 @@
         <div class="bg-white rounded-lg shadow-lg p-6">
             <div class="mb-6">
                 <h2 class="text-xl font-semibold mb-4 text-gray-700">Binary</h2>
-                <div class="grid grid-cols-9 gap-2 text-center">
+                <div class="grid grid-cols-11 gap-2 text-center">
+                    <div class="font-semibold text-sm">1024</div>
+                    <div class="font-semibold text-sm">512</div>
                     <div class="font-semibold text-sm">256</div>
                     <div class="font-semibold text-sm">128</div>
                     <div class="font-semibold text-sm">64</div>
@@ -28,6 +30,8 @@
                     <div class="font-semibold text-sm">4</div>
                     <div class="font-semibold text-sm">2</div>
                     <div class="font-semibold text-sm">1</div>
+                    <div id="bit1024" class="border border-gray-300 p-2 rounded text-lg">0</div>
+                    <div id="bit512" class="border border-gray-300 p-2 rounded text-lg">0</div>
                     <div id="bit256" class="border border-gray-300 p-2 rounded text-lg">0</div>
                     <div id="bit128" class="border border-gray-300 p-2 rounded text-lg">0</div>
                     <div id="bit64" class="border border-gray-300 p-2 rounded text-lg">0</div>
@@ -48,7 +52,7 @@
 
     <script type="module">
         const decimalInput = document.getElementById('decimalInput');
-        const bits = [256, 128, 64, 32, 16, 8, 4, 2, 1];
+        const bits = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1];
 
         function updateBinaryDisplay(decimal) {
             let remaining = decimal;
@@ -67,7 +71,7 @@
 
         decimalInput.addEventListener('input', (e) => {
             const decimal = parseInt(e.target.value, 10);
-            if (isNaN(decimal) || decimal < 0 || decimal > 255) {
+            if (isNaN(decimal) || decimal < 0 || decimal > 1023) {
                 updateBinaryDisplay(0);
             } else {
                 updateBinaryDisplay(decimal);

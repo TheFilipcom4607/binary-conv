@@ -1,93 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decimal to Binary Converter with Visualization</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decimal to Binary Converter with Visualization</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+  <main class="flex-grow flex items-center justify-center px-4">
     <div class="container mx-auto p-8 max-w-3xl">
-        <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">Decimal to Binary Converter with Visualization</h1>
-        <div class="bg-white rounded-lg shadow-lg p-6">
-            <div class="mb-6">
-                <h2 class="text-xl font-semibold mb-4 text-gray-700">Binary</h2>
-                <div class="grid grid-cols-9 gap-2 text-center">
-                    <div class="font-semibold text-sm">256</div>
-                    <div class="font-semibold text-sm">128</div>
-                    <div class="font-semibold text-sm">64</div>
-                    <div class="font-semibold text-sm">32</div>
-                    <div class="font-semibold text-sm">16</div>
-                    <div class="font-semibold text-sm">8</div>
-                    <div class="font-semibold text-sm">4</div>
-                    <div class="font-semibold text-sm">2</div>
-                    <div class="font-semibold text-sm">1</div>
-                    <div id="bit256" class="border border-gray-300 p-2 rounded text-lg">0</div>
-                    <div id="bit128" class="border border-gray-300 p-2 rounded text-lg">0</div>
-                    <div id="bit64" class="border border-gray-300 p-2 rounded text-lg">0</div>
-                    <div id="bit32" class="border border-gray-300 p-2 rounded text-lg">0</div>
-                    <div id="bit16" class="border border-gray-300 p-2 rounded text-lg">0</div>
-                    <div id="bit8" class="border border-gray-300 p-2 rounded text-lg">0</div>
-                    <div id="bit4" class="border border-gray-300 p-2 rounded text-lg">0</div>
-                    <div id="bit2" class="border border-gray-300 p-2 rounded text-lg">0</div>
-                    <div id="bit1" class="border border-gray-300 p-2 rounded text-lg">0</div>
-                </div>
-            </div>
-            <div>
-                <h2 class="text-xl font-semibold mb-4 text-gray-700">Decimal</h2>
-                <input type="number" id="decimalInput" class="w-full border border-gray-300 rounded p-2 text-lg" placeholder="Enter a decimal number">
-            </div>
+      <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">Decimal to Binary Converter with Visualization</h1>
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold mb-4 text-gray-700">Binary</h2>
+          <div class="grid grid-cols-9 gap-2 text-center">
+            <div class="font-semibold text-sm">256</div>
+            <div class="font-semibold text-sm">128</div>
+            <div class="font-semibold text-sm">64</div>
+            <div class="font-semibold text-sm">32</div>
+            <div class="font-semibold text-sm">16</div>
+            <div class="font-semibold text-sm">8</div>
+            <div class="font-semibold text-sm">4</div>
+            <div class="font-semibold text-sm">2</div>
+            <div class="font-semibold text-sm">1</div>
+            <div id="bit256" class="border border-gray-300 p-2 rounded text-lg">0</div>
+            <div id="bit128" class="border border-gray-300 p-2 rounded text-lg">0</div>
+            <div id="bit64" class="border border-gray-300 p-2 rounded text-lg">0</div>
+            <div id="bit32" class="border border-gray-300 p-2 rounded text-lg">0</div>
+            <div id="bit16" class="border border-gray-300 p-2 rounded text-lg">0</div>
+            <div id="bit8" class="border border-gray-300 p-2 rounded text-lg">0</div>
+            <div id="bit4" class="border border-gray-300 p-2 rounded text-lg">0</div>
+            <div id="bit2" class="border border-gray-300 p-2 rounded text-lg">0</div>
+            <div id="bit1" class="border border-gray-300 p-2 rounded text-lg">0</div>
+          </div>
         </div>
+        <div>
+          <h2 class="text-xl font-semibold mb-4 text-gray-700">Decimal</h2>
+          <input type="number" id="decimalInput" class="w-full border border-gray-300 rounded p-2 text-lg" placeholder="Enter a decimal number">
+        </div>
+      </div>
     </div>
+  </main>
 
-    <script type="module">
-        const decimalInput = document.getElementById('decimalInput');
-        const bits = [256, 128, 64, 32, 16, 8, 4, 2, 1];
+  <footer class="text-center text-sm text-gray-500 py-6">
+    <hr class="my-6 border-gray-300 max-w-xs mx-auto" />
+    <div class="space-x-2">
+      <a href="https://github.com/TheFilipcom4607/binary" class="hover:underline text-blue-500">📂 GitHub</a>
+      <span>•</span>
+      <a href="https://projects.thefilip.com/binary" class="hover:underline text-blue-500">📄 Writeup</a>
+    </div>
+    <p class="mt-2">
+      Made with <span class="text-red-500">❤️</span> by
+      <a href="https://github.com/TheFilipcom4607" class="hover:underline text-blue-500">TheFilip</a>
+    </p>
+  </footer>
 
-        function updateBinaryDisplay(decimal) {
-            let remaining = decimal;
-            bits.forEach((bit) => {
-                const bitElement = document.getElementById(`bit${bit}`);
-                if (remaining >= bit) {
-                    bitElement.textContent = '1';
-                    bitElement.classList.add('bg-blue-100');
-                    remaining -= bit;
-                } else {
-                    bitElement.textContent = '0';
-                    bitElement.classList.remove('bg-blue-100');
-                }
-            });
+  <script type="module">
+    const decimalInput = document.getElementById('decimalInput');
+    const bits = [256, 128, 64, 32, 16, 8, 4, 2, 1];
+
+    function updateBinaryDisplay(decimal) {
+      let remaining = decimal;
+      bits.forEach((bit) => {
+        const bitElement = document.getElementById(`bit${bit}`);
+        if (remaining >= bit) {
+          bitElement.textContent = '1';
+          bitElement.classList.add('bg-blue-100');
+          remaining -= bit;
+        } else {
+          bitElement.textContent = '0';
+          bitElement.classList.remove('bg-blue-100');
         }
+      });
+    }
 
-        decimalInput.addEventListener('input', (e) => {
-            const decimal = parseInt(e.target.value, 10);
-            if (isNaN(decimal) || decimal < 0 || decimal > 511) {
-                updateBinaryDisplay(0);
-            } else {
-                updateBinaryDisplay(decimal);
-            }
-        });
-
-        // Initialize with 0
+    decimalInput.addEventListener('input', (e) => {
+      const decimal = parseInt(e.target.value, 10);
+      if (isNaN(decimal) || decimal < 0 || decimal > 511) {
         updateBinaryDisplay(0);
-    </script>
-   <footer class="w-full text-center text-sm text-gray-500 mt-12 pb-6">
-  <hr class="my-6 border-gray-300 max-w-xs mx-auto" />
-  <div class="space-x-2">
-    <a href="https://github.com/TheFilipcom4607/binary" class="hover:underline text-blue-500">📂 GitHub</a>
-    <span>•</span>
-    <a href="https://projects.thefilip.com/binary" class="hover:underline text-blue-500">📄 Writeup</a>
-  </div>
-  <p class="mt-2">
-    Made with <span class="text-red-500">❤️</span> by
-    <a href="https://github.com/TheFilipcom4607" class="hover:underline text-blue-500">TheFilip</a>
-  </p>
-</footer>
+      } else {
+        updateBinaryDisplay(decimal);
+      }
+    });
+
+    // Initialize with 0
+    updateBinaryDisplay(0);
+  </script>
 </body>
 </html>
